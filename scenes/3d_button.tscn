@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://60lom2d4n8cp"]
+
+[ext_resource type="Script" uid="uid://bh3bogg1kohqm" path="res://scenes/cube_for_scale.gd" id="1_bpg6x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dibu2"]
+size = Vector3(1, 0.5, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0ym26"]
+size = Vector3(1, 0.5, 0.1)
+
+[node name="3DButton" type="StaticBody3D"]
+transform = Transform3D(1.00055, 0, 0, 0, 1.00055, 0, 0, 0, 1.00055, 0, 0, 0)
+script = ExtResource("1_bpg6x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_dibu2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_0ym26")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://1tr00r44vs8e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g4p14"]
+albedo_color = Color(0, 0, 1, 1)
+
+[node name="Lego" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+calculate_tangents = false
+use_collision = true
+size = Vector3(2, 1, 1)
+material = SubResource("StandardMaterial3D_g4p14")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGBox3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.051, 0)
+operation = 2
+use_collision = true
+size = Vector3(1.8, 0.9, 0.8)
