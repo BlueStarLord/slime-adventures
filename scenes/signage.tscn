@@ -1,0 +1,72 @@
+[gd_scene load_steps=10 format=3 uid="uid://bhhqabyasrew6"]
+
+[ext_resource type="Texture2D" uid="uid://v55dt1asd327" path="res://assets/planks_023_b/Planks023B_1K-JPG_Color.jpg" id="1_ametl"]
+[ext_resource type="Texture2D" uid="uid://xhwf1ervp7of" path="res://assets/planks_023_b/Planks023B_1K-JPG_Roughness.jpg" id="2_8raao"]
+[ext_resource type="Texture2D" uid="uid://ctsc0lchhvr3m" path="res://assets/planks_023_b/Planks023B_1K-JPG_Metalness.jpg" id="3_1poa8"]
+[ext_resource type="Texture2D" uid="uid://bojmqsk3ocewy" path="res://assets/planks_023_b/Planks023B_1K-JPG_NormalGL.jpg" id="4_l1e3u"]
+[ext_resource type="PackedScene" uid="uid://de5erhxrfwnfy" path="res://scenes/chain.tscn" id="5_dq7ij"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v7ua7"]
+albedo_texture = ExtResource("1_ametl")
+metallic = 1.0
+metallic_texture = ExtResource("3_1poa8")
+roughness_texture = ExtResource("2_8raao")
+normal_enabled = true
+normal_texture = ExtResource("4_l1e3u")
+ao_enabled = true
+ao_texture = ExtResource("2_8raao")
+
+[sub_resource type="BoxMesh" id="BoxMesh_gd8xq"]
+material = SubResource("StandardMaterial3D_v7ua7")
+size = Vector3(2.5, 1.5, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_hirat"]
+material = SubResource("StandardMaterial3D_v7ua7")
+size = Vector3(1.5, 1, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4k8at"]
+material = SubResource("StandardMaterial3D_v7ua7")
+size = Vector3(2, 1, 0.5)
+
+[node name="Signage" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_gd8xq")
+
+[node name="Chain" parent="." instance=ExtResource("5_dq7ij")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -1, 1, 0)
+
+[node name="Chain6" parent="." instance=ExtResource("5_dq7ij")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, -2.3, -2, 0)
+
+[node name="Chain3" parent="." instance=ExtResource("5_dq7ij")]
+transform = Transform3D(-0.50000006, -0.8660254, 0, 0.8660254, -0.50000006, 0, 0, 0, 1, -0.20000002, -1.8083676, 0)
+
+[node name="Chain4" parent="." instance=ExtResource("5_dq7ij")]
+transform = Transform3D(0.50000006, 0.8660254, -8.742278e-08, 0.8660254, -0.50000006, 0, -4.3711392e-08, -7.5710346e-08, -1, 0.19999996, -1.8083676, 0)
+
+[node name="Chain2" parent="." instance=ExtResource("5_dq7ij")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 1, 1, 0)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 2, -0.2, 0)
+mesh = SubResource("BoxMesh_hirat")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -2, -0.2, 0)
+mesh = SubResource("BoxMesh_hirat")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.742278e-08, -7.642742e-15, -1, 8.742278e-08, -8.742278e-08, 8.742278e-08, 1, 0, -2.5, 0)
+mesh = SubResource("BoxMesh_4k8at")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.742278e-08, -7.642742e-15, -1, 8.742278e-08, -8.742278e-08, 8.742278e-08, 1, -2.3, -2.5, 0)
+mesh = SubResource("BoxMesh_4k8at")
+
+[node name="Chain7" parent="." instance=ExtResource("5_dq7ij")]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 2.4000003, -2, 0)
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.742278e-08, -7.642742e-15, -1, 8.742278e-08, -8.742278e-08, 8.742278e-08, 1, 2.4000003, -2.5, 0)
+mesh = SubResource("BoxMesh_4k8at")

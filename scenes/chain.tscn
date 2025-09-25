@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://de5erhxrfwnfy"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_orrtv"]
+albedo_color = Color(0.3137255, 0.3137255, 0.3137255, 1)
+metallic = 0.75
+roughness = 0.5
+
+[sub_resource type="TorusMesh" id="TorusMesh_kju67"]
+material = SubResource("StandardMaterial3D_orrtv")
+inner_radius = 0.125
+outer_radius = 0.2
+
+[node name="Chain" type="Node3D"]
+
+[node name="Linck" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 0.75, 0, 0, 0)
+mesh = SubResource("TorusMesh_kju67")
+
+[node name="Linck2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 0.75, 0.70000005, 0, 0)
+mesh = SubResource("TorusMesh_kju67")
+
+[node name="Linck3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, -4.371139e-08, 0.75, 0, -1, -3.278354e-08, 0.35, 0, 0)
+mesh = SubResource("TorusMesh_kju67")
+
+[node name="Linck4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, -4.371139e-08, 0.75, 0, -1, -3.278354e-08, 1.05, 0, 0)
+mesh = SubResource("TorusMesh_kju67")

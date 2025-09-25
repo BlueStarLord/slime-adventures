@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b3wh83gr0n2a3"]
+[gd_scene load_steps=13 format=3 uid="uid://b3wh83gr0n2a3"]
 
 [ext_resource type="Texture2D" uid="uid://gw6bugx4hrhl" path="res://assets/grass_007/Grass007_1K-JPG_Color.jpg" id="1_k0juu"]
 [ext_resource type="Texture2D" uid="uid://ci0c4mk7i46ut" path="res://assets/grass_007/Grass007_1K-JPG_AmbientOcclusion.jpg" id="2_71j4m"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://blj82bdwqngg5" path="res://scenes/slime.tscn" id="5_71j4m"]
 [ext_resource type="PackedScene" uid="uid://1tr00r44vs8e" path="res://scenes/lego.tscn" id="6_qfnet"]
 [ext_resource type="PackedScene" uid="uid://60lom2d4n8cp" path="res://scenes/3d_button.tscn" id="7_i7141"]
+[ext_resource type="PackedScene" uid="uid://bhhqabyasrew6" path="res://scenes/signage.tscn" id="8_4mrxx"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_71j4m"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -38,7 +39,7 @@ uv1_triplanar = true
 environment = SubResource("Environment_i7141")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+transform = Transform3D(-0.8660255, -0.433013, 0.24999957, 0.35355327, -0.17677751, 0.91855824, -0.35355353, 0.8838835, 0.30618668, 0, 0, 0)
 shadow_enabled = true
 
 [node name="Grass" type="CSGBox3D" parent="."]
@@ -54,7 +55,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3, 0.899904, 0)
 
 [node name="Lego" parent="." instance=ExtResource("6_qfnet")]
-transform = Transform3D(1, 0, 0, 0, -0.999539, 0.0303467, 0, -0.0303467, -0.999539, -3.52791, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9999725, -0.0073652565, 0, 0.0073652565, 0.9999725, -3.5, 0, 0.004)
 
 [node name="NewGame" parent="." instance=ExtResource("7_i7141")]
 transform = Transform3D(1.00055, 0, 0, 0, 1.00055, 0, 0, 0, 1.00055, 2, 0.2, 0)
@@ -73,3 +74,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.051)
 modulate = Color(0.705113, 0.705113, 3.85046e-07, 1)
 outline_modulate = Color(1, 0, 1, 0.266667)
 text = "Continue"
+
+[node name="Signage" parent="." instance=ExtResource("8_4mrxx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -5)
